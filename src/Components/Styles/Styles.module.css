@@ -1,0 +1,57 @@
+/* Root styles */
+:root {
+    --border-style: 1px solid black;
+    --padding:20px;
+
+}
+
+
+/* Announcement bar Styles */
+.AnnouncementBar_Container {
+    padding: var(--padding);
+}
+
+/* Nav bar Styles */
+.NavBar_Container {
+    padding: var(--padding);
+}
+
+/* Hero section Styles */
+.HeroSection_Container {
+    padding: var(--padding);
+}
+
+/* Logo cloud Styles */
+.LogoCloud_Container {
+    padding: var(--padding);
+}
+
+/* Feature 1 Styles */
+.Feature1_Container {
+    padding: var(--padding);
+}
+
+/* Feature 2 Styles */
+.Feature2_Container {
+    padding: var(--padding);
+}
+
+/* Component 1 Styles */
+.Component1_Container {
+    padding: var(--padding);
+}
+
+/* Testimonial Styles */
+.Testimonial_Container {
+    padding: var(--padding);
+}
+
+/* Call to action component Styles */
+.CallToAction_Container {
+    padding: var(--padding);
+}
+
+/* Footer Styles */
+.Footer_Container {
+    padding: var(--padding);
+}
