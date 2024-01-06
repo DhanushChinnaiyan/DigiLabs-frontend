@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
-import SwipeableViews from "react-swipeable-views";
+import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { autoPlay } from "react-swipeable-views-utils";
 import { Avatar, Card, CardContent } from "@mui/material";
 import StarIcon from "@mui/icons-material/Star";
@@ -102,7 +102,7 @@ const Testimonial = () => {
         <img
           src={reviews[activeStep].companyLogo}
           alt={reviews[activeStep].userName}
-          style={{ width: "80px" }}
+          style={{ width: "100px" }}
         />
       </Paper>
       <AutoPlaySwipeableViews
