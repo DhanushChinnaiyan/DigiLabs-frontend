@@ -34,7 +34,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "inherit" }}>
+    <AppBar position="static" sx={{ bgcolor: "inherit" ,boxShadow:0}} className={styles.NavBar_Container}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

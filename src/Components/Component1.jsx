@@ -30,24 +30,26 @@ const Component1 = () => {
     },
   ];
   return (
-    <div className={styles.Component1_Container}>
+    <div className={styles.Component1_Main_Container}>
+      <div className={styles.Component1_Container}>
       {details.map((detail, index) => (
-        <Grid item xs={12} md={6} key={index}>
-          <Card>
+        <Grid item xs={12} md={6} key={index} maxWidth={300}>
+          <Card sx={{boxShadow:0}}>
             <CardContent sx={{ display: "grid", justifyContent: "center" }}>
-              <Typography variant="h4" sx={{color:"#582066"}}>
+              <Typography variant="h4" sx={{color:"#582066",textAlign:"center"}}>
                 {detail.value}
               </Typography>
-              <Typography variant="h6" component="h4">
+              <Typography variant="h6" component="h4" sx={{textAlign:"center"}}>
                 {detail.title}
               </Typography>
-              <Typography variant="body1" color="textSecondary">
+              <Typography variant="body1" color="textSecondary" sx={{textAlign:"center"}}>
                 {detail.description}
               </Typography>
             </CardContent>
           </Card>
         </Grid>
       ))}
+    </div>
     </div>
   );
 };

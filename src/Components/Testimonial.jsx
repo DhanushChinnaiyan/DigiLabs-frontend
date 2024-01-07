@@ -86,7 +86,8 @@ const Testimonial = () => {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+    <div className={styles.Testimonial_Container}>
+      <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
       <Paper
         square
         elevation={0}
@@ -121,16 +122,17 @@ const Testimonial = () => {
                   maxWidth: 400,
                   overflow: "hidden",
                   width: "100%",
+                  
                 }}
               >
-                <Typography>{review.review}</Typography>
-                <Box sx={{ display: "flex", alignItems: "center", mt: 1 }}>
+                <Typography sx={{color:"#24282F",textAlign:"center",marginBottom:"20px"}}>{review.review}</Typography>
+                <Box sx={{ display: "flex",gap:"4px",flexDirection:"column",justifyContent:"center", alignItems: "center", mt: 1 }}>
                   <Avatar src={review.userImage} alt={review.userName} />
                   <Box sx={{ marginLeft: 1 }}>
-                    <Typography variant="subtitle1">
+                    <Typography variant="subtitle1" sx={{textAlign:"center"}}>
                       {review.userName}
                     </Typography>
-                    <Typography variant="subtitle2">
+                    <Typography variant="subtitle2" sx={{textAlign:"center",color:"#5A6475"}}>
                       {review.userRole}
                     </Typography>
                     <Typography >
@@ -173,6 +175,7 @@ const Testimonial = () => {
         }
       />
     </Box>
+    </div>
   );
 };
 

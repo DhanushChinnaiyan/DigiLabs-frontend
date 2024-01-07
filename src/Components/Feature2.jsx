@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Styles/Styles.module.css";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Typography } from "@mui/material";
+import { div } from "@mui/material";
 import mobileImage from "../images/mobile.png";
 import starImage from "../images/star.png";
 import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
@@ -13,6 +13,7 @@ import styled from "@emotion/styled";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
+  width:100,
   borderRadius: 5,
   [`&.${linearProgressClasses.colorPrimary}`]: {
     backgroundColor: "#EFE4F2",
@@ -28,7 +29,7 @@ const Feature2 = () => {
     visaCardNumber: "9349",
     amount: "127.14",
     currency: "USD",
-    totalAmountOfPurchase: 5000,
+    totalAmountOfPurchase: 700,
   };
 
   const targetValues = [400, 1000, 5000];
@@ -43,7 +44,7 @@ const Feature2 = () => {
       } else if (index > 0) {
         if (currentValue > targets[index - 1]) {
           const convertedValue = currentValue - targets[index - 1];
-          const convertedTarget = target - targets[index-1]
+          const convertedTarget = target - targets[index - 1];
           values.push((convertedValue / convertedTarget) * 100);
         } else {
           values.push(0);
@@ -62,66 +63,55 @@ const Feature2 = () => {
   );
   console.log(progressValues);
   return (
-    <div className={styles.Feature2_Container}>
-      <Typography variant="h3">
-        Elevating Card Programs with Cutting-Edge Technology
-      </Typography>
-      <Typography variant="body1">
+    <div className={styles.Feature2_Main_Container}>
+      <div className={styles.Feature2_Container}>
+      <div className={styles.feature2Content}>
+      <div className={styles.feature2Content_details}>
+      <div>Elevating Card Programs with Cutting-Edge Technology</div>
+      <div>
         consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
         et dolore magna aliqua.
-      </Typography>
-      <Typography variant="subtitle1">
-        Compare all Pro features <ArrowForwardIcon />
-      </Typography>
-      <Box>
-        <Box component="div">
+      </div>
+      </div>
+      <div className={styles.feature2Content_action}>
+        Compare all Pro features <ArrowForwardIcon sx={{fontSize:"20px"}} />
+      </div>
+      </div>
+      <div className={styles.feature2Media}>
+        <div className={styles.feature2Media_Left}>
+        <div >
           <img src={mobileImage} alt="Mobile Image" />
-        </Box>
-        <Box component="div">
-          <img src={starImage} alt="Star Image" />
-          <Box component="Card">
-            <Typography component="div">
-              <Typography component="div">
-                <Typography variant="h4" component="h6">
-                  Spending
-                </Typography>
-                <Typography variant="body1" color="textSecondary">
-                  <CreditCardIcon />
+        </div>
+        </div>
+        <div className={styles.feature2Media_Right}>
+        <img src={starImage} alt="Star Image" />
+        <div className={styles.feature2Media_Right_Contant}>      
+            <div className={styles.feature2Media_details}>
+              <div>
+                <div>Spending</div>
+                <div>
+                  <CreditCardIcon sx={{color:"#2C3E50",fontSize:"12.984px"}}/>
                   {featureData.visaCardNumber} visa card
-                </Typography>
-              </Typography>
-              <ZoomOutMapIcon />
-            </Typography>
-            <Typography component="div">
-              <Typography component="div">
-                <Typography variant="h4" component="h6">
-                  {featureData.amount}
-                </Typography>
-                <Typography variant="h5" component="h6">
-                  {featureData.currency}
-                </Typography>
-              </Typography>
-              <Typography component="div">
-                <Typography variant="body1" color="textSecondary">
-                  vs last week
-                </Typography>
-                <Typography variant="body1" color="textSecondary">
-                  Last Purchased ( Feb 24 19:59 UTC-5 )
-                </Typography>
-              </Typography>
-              <Typography component="div">
-                <Typography component="div">
-                  <Typography component="span" color="textSecondary">
-                    400 USD
-                  </Typography>
-                  <Typography component="span" color="textSecondary">
-                    1000 USD
-                  </Typography>
-                  <Typography component="span" color="textSecondary">
-                    5000 USD
-                  </Typography>
-                </Typography>
-                <Typography component="div">
+                </div>
+              </div>
+              <ZoomOutMapIcon sx={{color:"#2C3E50"}}/>
+            </div>
+            <div className={styles.feature2_Card_details}>
+              <div className={styles.feature2_currency}>
+                <div>{featureData.amount}</div>
+                <div>{featureData.currency}</div>
+              </div>
+              <div className={styles.feature2_Purchase_details}>
+                <div>vs last week</div>
+                <div>Last Purchased ( Feb 24 19:59 UTC-5 )</div>
+              </div>
+              <div className={styles.feature2_Amount_details}>
+                <div>
+                  <div>400 USD</div>
+                  <div>1000 USD</div>
+                  <div>5000 USD</div>
+                </div>
+                <div>
                   {targetValues.map((value, index) => (
                     <BorderLinearProgress
                       variant="determinate"
@@ -129,12 +119,13 @@ const Feature2 = () => {
                       key={value}
                     />
                   ))}
-                </Typography>
-              </Typography>
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
+                </div>
+              </div>
+            </div>      
+        </div>
+        </div>
+      </div>
+    </div>
     </div>
   );
 };

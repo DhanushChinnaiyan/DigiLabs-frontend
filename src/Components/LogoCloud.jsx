@@ -48,13 +48,17 @@ const LogoCloud = () => {
     <div className={styles.LogoCloud_Container}>
       {logos.map((logo, index) => (
         <div key={index} className={styles.logoItem}>
-          <img
-            src={logo.companyLogo}
-            alt={logo.companyName}
-            className={styles.logoImage}
-          />
-          {logo.companyName === "nuxt" && (
-            <span className={styles.companyName}>Nuxt</span>
+          {logo.companyName === "nuxt" ? (
+            <div className={styles.NuxtCompanyLogo}>
+              <img src={logo.companyLogo} alt={logo.companyName} />
+              <span>Nuxt</span>
+            </div>
+          ) : (
+            <img
+              src={logo.companyLogo}
+              alt={logo.companyName}
+              className={styles.logoImage}
+            />
           )}
         </div>
       ))}
